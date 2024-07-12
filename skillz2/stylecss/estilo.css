@@ -1,0 +1,484 @@
+/* geral */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(black, #0b052c);
+  height: 100vh;
+
+}
+
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* cabeçalho */
+
+header {
+  padding: 40px 4%;
+}
+
+header>.interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+header a {
+  color: #7a7a7a;
+  text-decoration: none;
+  display: inline-block;
+  transition: .2s;
+}
+
+header a:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav.menu ul li {
+  display: inline-block;
+  padding: 0 40px;
+}
+
+/*menu mobile*/
+
+.overlay-menu{
+  background-color: #0b052c86;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 88888;
+  display: none;
+}
+
+.btn-abrir-menu i{
+  color: white;
+  font-size: 40px;
+}
+
+.menu-mobile{
+  background-color: black;
+  height: 300vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+  width: 0%;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.menu-mobile.abrir-menu{
+  width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+  display: block;
+}
+
+.menu-mobile .btn-fechar{
+  padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.menu-mobile nav ul{
+  text-align: right;
+}
+
+.menu-mobile nav ul li a{
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 8%;
+  display: block;
+}
+
+.menu-mobile nav ul li a:hover{
+  background-color: white;
+  color: black;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.input {
+  border-style: none;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  outline: none;
+  border-radius: 50%;
+  transition: .5s ease-in-out;
+  background-color: #4323d5;
+  box-shadow: 0px 0px 3px #f3f3f3;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input::placeholder,
+.input {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 17px;
+}
+
+.input::placeholder {
+  color: #8f8f8f;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border-style: none;
+  border-radius: 50%;
+  pointer-events: painted;
+  background-color: transparent;
+  transition: .2s linear;
+}
+
+.icon:focus~.input,
+.input:focus {
+  box-shadow: none;
+  width: 250px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 3px solid #4323d5;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+/* topo do site*/
+
+section.topo-do-site {
+  padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.topo-do-site h1 {
+  color: #fff;
+  font-size: 42px;
+  line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+  color: #4323d5;
+}
+
+.topo-do-site .txt-topo-site p {
+  color: #fff;
+  margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+  position: relative;
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn-contato button {
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #4323d5;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .2s;
+  color: #fff;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+  box-shadow: 0px 0px 8px white;
+  transform: scale(1.05);
+}
+
+/* sobre o skillz*/
+
+.link-inscreva-se a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.link-inscreva-se a:hover {
+  color: #321bab;
+}
+
+h2.titulo {
+  color: #fff;
+  font-size: 38px;
+  text-align: center;
+}
+
+h2.titulo span {
+  color: #4323d5;
+}
+
+section.sobre {
+  padding: 40px 4%;
+}
+
+section.sobres .flex {
+  gap: 60px;
+}
+
+.sobre .sobreskillz {
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 45px;
+  transition: .2s;
+}
+
+.sobre .sobreskillz:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffffff78;
+}
+
+.sobre .sobreskillz i {
+  font-size: 70px;
+  color: #4323d5;
+}
+
+.sobre .sobreskillz h3 {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+
+.sobreskillz a {
+
+  font-size: 28px;
+  margin: 15px 0;
+  color: #ffffff;
+  border-style: none;
+  text-decoration: none;
+}
+
+
+/* ESTILO DO COMO FUNFA */
+section.sobre {
+  padding: 80px 4%;
+}
+
+section.sobre .flex {
+  align-items: center;
+  gap: 60px;
+}
+
+.sobre .txt-sobre {
+  color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+  color: #4323d5;
+  display: block;
+}
+
+.sobre .txt-sobre p {
+  margin: 20px 0;
+  text-align: justify;
+}
+
+#entrar {
+  padding: 0.6rem 1.2rem;
+  background-color: #8d7fca;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 1rem;
+  transition: 0.5;
+}
+
+#close-modal {
+
+  border-style: none;
+  outline: none;
+  background: none;
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+#entrar:hover {
+  opacity: 2;
+  background-color: #321bab;
+  color: #fff;
+
+}
+
+#fade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.6);
+  z-index: 5;
+  /*acima dos elementos*/
+
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 10;
+  width: 300px;
+  max-width: 90%;
+  height: 400px;
+  max-height: 90%;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  z-index: 10;
+}
+
+#cor {
+  color: rgb(0, 0, 0);
+}
+
+h2 {
+  font-size: 50px;
+  align-items: center;
+
+}
+
+.modalbody input {
+  margin-bottom: 1rem;
+
+}
+
+dialog {
+  box-shadow: 0 0 1em rgb(0 0 0 /.3);
+
+
+}
+
+#sla {
+  font-size: 20px;
+  border-style: none;
+  outline: none;
+  background: none;
+  border: none;
+  color: #7a7a7a;
+  text-decoration: none;
+  display: inline-block;
+  transition: .2s;
+  cursor: pointer;
+}
+
+#sla:hover {
+  color: #fff;
+  transform: scale(1.05);
+
+}
+
+#button:hover {
+  color: #fff;
+  transform: scale(1.05);
+
+}
+
+.header {
+  display: flex;
+  /*itens do lado do outro*/
+  justify-content: space-between;
+  /*espaço igualmente*/
+  align-items: center;
+  border-bottom: 1px solid hsl(268, 44%, 54%);
+  /*separa o cabeçalo do conteudo e px solido linha contínua em torno do elemento ou do lado indicado.*/
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  /*espaçamento interno externpo igual e coloca uma borda no meio*/
+
+}
+
+/*responsivo*/
+
+@media screen and (max-width: 1020px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .menu,
+  .btn-contato,
+  .logo, .input-wrapper {
+    display: none;
+  }
+
+  section.topo-do-site {
+    padding: 20px 8%;
+  }
+
+  .topo-do-site h1 {
+    font-size: 30px;
+  }
+
+  .topo-do-site .img-topo-site img {
+    width: 100%;
+  }
+
+  section.topo-do-site .flex {
+    gap: 40px;
+  }
+
+  section.sobre {
+    padding: 80px 10%;
+  }
+
+  .sobre .txt-sobre h2 {
+    font-size: 35px;
+    line-height: 35px;
+    text-align: center;
+  }
+
+  .img-sobre img{
+    width: 100%;
+  }
+}
